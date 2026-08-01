@@ -1,0 +1,124 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { GraduationCap, MapPin, Calendar } from "lucide-react";
+import SectionWrapper from "@/components/common/SectionWrapper";
+
+interface EducationEntry {
+    institution: string;
+    degree: string;
+    period: string;
+    location: string;
+    score?: string;
+    coursework: string[];
+}
+
+const EDUCATION: EducationEntry[] = [
+    {
+        institution: "MITS University",
+        degree: "B.Tech in Computer Science & Technology",
+        period: "2021 – 2024",
+        location: "Madanapalle, India",
+        coursework: ["Data Structures", "Algorithms", "DBMS", "OS", "System Design"],
+    },
+    {
+        institution: "Golden Valley Integrated Campus",
+        degree: "Diploma in Civil Engineering",
+        period: "2017 – 2020",
+        location: "Madanapalle, India",
+        coursework: ["Data Structures", "Algorithms", "DBMS", "OS", "System Design"],
+    },
+    {
+        institution: "Andhra Pradesh Open School Society(APOSS)",
+        degree: "Intermediate (Class XII)",
+        period: "2020 – 2021",
+        location: "Madanapalle, India",
+        score: "7.0 GPA",
+        coursework: ["Mathematics", "Physics", "Chemistry"],
+    },
+    {
+        institution: "Z P Urdu High School Nimmanapalle",
+        degree: "High School (Class X)",
+        period: "2016 – 2017",
+        location: "Nimmanapalle, India",
+        score: "8.8 GPA",
+        coursework: ["Science", "Mathematics", "Social Science", "English", "Hindi"],
+    }
+];
+
+export default function Education() {
+    return (
+        <SectionWrapper id="education" className="py-32 border-t border-border bg-card">
+            <div className="max-w-4xl mx-auto px-6">
+                <motion.div
+                    className="text-center mb-20"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                >
+                    <span className="text-[10px] font-mono text-amber-500 font-bold uppercase tracking-widest bg-amber-500/5 px-2.5 py-1 border border-amber-500/20 rounded">
+                        Academic Nodes
+                    </span>
+                    <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-4 tracking-tighter">
+                        Education & <span className="text-gradient">Background</span>
+                    </h2>
+                    <p className="text-muted-foreground max-w-2xl mx-auto text-base leading-relaxed">
+                        My formal education and specialized academic training, organized chronologically.
+                    </p>
+                </motion.div>
+
+                <div className="space-y-12 relative before:absolute before:left-0 before:top-2 before:bottom-2 before:w-[1px] before:bg-border/60">
+                    {EDUCATION.map((edu, i) => (
+                        <motion.div
+                            key={edu.degree}
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.1 }}
+                            className="relative pl-8 group"
+                        >
+                            {/* Technical Timeline Connector */}
+                            <div className="absolute left-[-5px] top-2 w-[9px] h-[9px] rounded-full border-2 border-border bg-background group-hover:border-amber-500 group-hover:bg-amber-500 transition-all duration-300 z-10" />
+                            
+                            <div className="p-6 md:p-8 rounded-xl border border-border bg-background hover:border-amber-500/30 transition-all duration-300">
+                                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                                    <h3 className="text-xl font-bold text-foreground group-hover:text-amber-500 transition-colors">
+                                        {edu.institution}
+                                    </h3>
+                                    <div className="flex items-center gap-2 text-muted-foreground font-mono text-[10px] font-bold uppercase tracking-wider">
+                                        <Calendar className="w-3.5 h-3.5" />
+                                        {edu.period}
+                                    </div>
+                                </div>
+
+                                <div className="flex flex-wrap items-center gap-4 text-muted-foreground mb-6">
+                                    <div className="flex items-center gap-1.5 text-xs font-mono">
+                                        <GraduationCap className="w-3.5 h-3.5 text-amber-500" />
+                                        {edu.degree}
+                                    </div>
+                                    <div className="flex items-center gap-1.5 text-xs font-mono">
+                                        <MapPin className="w-3.5 h-3.5 text-amber-500" />
+                                        {edu.location}
+                                    </div>
+                                    {edu.score && (
+                                        <span className="px-2.5 py-0.5 rounded border border-amber-500/20 bg-amber-500/5 text-amber-500 font-mono text-[9px] uppercase tracking-wider">
+                                            Score: {edu.score}
+                                        </span>
+                                    )}
+                                </div>
+
+                                <div className="flex flex-wrap gap-2">
+                                    {edu.coursework.map((course) => (
+                                        <span key={course} className="px-2 py-0.5 font-mono text-[10px] text-muted-foreground rounded border border-border bg-secondary group-hover:border-amber-500/20 transition-colors">
+                                            {course}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        </SectionWrapper>
+    );
+}
