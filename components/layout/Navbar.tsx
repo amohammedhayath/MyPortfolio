@@ -120,7 +120,7 @@ export default function Navbar() {
                     <motion.a
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        href="/Mohammed_Hayath_Resume.pdf"
+                        href="./MohammedHayath_Resume.pdf"
                         download
                         className="hidden sm:flex items-center gap-1 px-4 py-1.5 rounded border border-amber-500 bg-amber-500 hover:bg-amber-600 text-black text-xs font-bold transition-all duration-200"
                     >
@@ -153,7 +153,7 @@ export default function Navbar() {
                                     </button>
                                 ))}
                                 <Button className="w-full mt-4 bg-amber-500 text-black hover:bg-amber-600 font-bold font-mono" asChild>
-                                    <a href="/Mohammed_Hayath_Resume.pdf" download>
+                                    <a href="./MohammedHayath_Resume.pdf" download>
                                         Download Resume
                                     </a>
                                 </Button>
