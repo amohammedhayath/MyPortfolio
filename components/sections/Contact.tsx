@@ -27,22 +27,32 @@ export default function Contact() {
         reset,
     } = useForm<ContactFormValues>();
 
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
     const onSubmit = async (data: ContactFormValues) => {
+        if (!serviceId || !templateId || !publicKey) {
+            toast.error("Email service is not configured yet. Please reach out via LinkedIn for now.");
+            return;
+        }
+
         setSending(true);
         try {
             await emailjs.send(
-                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "",
-                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "",
+                serviceId,
+                templateId,
                 {
                     from_name: data.name,
                     from_email: data.email,
                     message: data.message,
                 },
-                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? ""
+                publicKey
             );
             toast.success("Message received! I'll be in touch soon.");
             reset();
-        } catch {
+        } catch (error) {
+            console.error("EmailJS submission failed", error);
             toast.error("Failed to send. Please reach out via LinkedIn.");
         } finally {
             setSending(false);
