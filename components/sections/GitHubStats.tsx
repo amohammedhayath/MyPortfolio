@@ -21,13 +21,13 @@ const STAT_CARDS: StatCard[] = [
         id: "stats",
         label: "GitHub Stats",
         getUrl: (t) =>
-            `https://github-readme-stats.shion.dev/api?username=${GH_USER}&show_icons=true&hide_border=true&include_all_commits=true&count_private=true&${t}`,
+            `https://github-readme-stats.vercel.app/api?username=${GH_USER}&show_icons=true&hide_border=true&${t}`,
     },
     {
         id: "langs",
         label: "Top Languages",
         getUrl: (t) =>
-            `https://github-readme-stats.shion.dev/api/top-langs?username=${GH_USER}&layout=compact&hide_border=true&include_all_commits=true&count_private=true&${t}`,
+            `https://github-readme-stats.vercel.app/api/top-langs?username=${GH_USER}&layout=compact&hide_border=true&${t}`,
     },
     {
         id: "streak",
