@@ -32,7 +32,7 @@ const firaCode = Fira_Code({
 export const metadata: Metadata = {
   title: {
     default: SITE_CONFIG.title,
-    template: `%s | amohammedhayath`,
+    template: `%s | Mohammed Hayath`,
   },
   description: SITE_CONFIG.description,
   keywords: [
@@ -97,8 +97,66 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://amdhayath.dpdns.org/#person",
+        "name": "Mohammed Hayath",
+        "url": "https://amdhayath.dpdns.org",
+        "jobTitle": "Full Stack Developer",
+        "description": "Full Stack Developer specializing in backend architectures, distributed systems, and responsive UI interfaces.",
+        "sameAs": [
+          "https://twitter.com/amohammedhayat/",
+          "https://www.linkedin.com/in/snmdhayath/",
+          "https://github.com/amohammedhayath/"
+        ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://amdhayath.dpdns.org/#organization",
+        "name": "Mohammed Hayath",
+        "url": "https://amdhayath.dpdns.org",
+        "description": "Full Stack Developer specializing in backend architectures, distributed systems, and responsive UI interfaces.",
+        "sameAs": [
+          "https://twitter.com/amohammedhayat/",
+          "https://www.linkedin.com/in/snmdhayath/",
+          "https://github.com/amohammedhayath/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://amdhayath.dpdns.org/#website",
+        "url": "https://amdhayath.dpdns.org",
+        "name": "Mohammed Hayath - Portfolio",
+        "publisher": {
+          "@id": "https://amdhayath.dpdns.org/#person"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://amdhayath.dpdns.org/#software",
+        "name": "Mohammed Hayath Portfolio",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    ]
+  };
+
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${outfit.variable} ${firaCode.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="font-sans antialiased min-h-screen bg-background text-foreground selection:bg-amber-500/20 selection:text-foreground">
         <ThemeProvider
           attribute="class"
