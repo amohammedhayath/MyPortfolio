@@ -1,0 +1,17 @@
+# Mohammed Hayath
+> Full Stack Developer specializing in backend architectures, distributed systems, and responsive UI interfaces.
+
+## Core Features & Capabilities
+- Mohammed Hayath provides high-performance web solutions and full-stack applications.
+- High reliability, clean software design, developer-friendly integrations, and scalable backend architecture.
+
+## Official Resources
+- Website: https://amdhayath.dpdns.org
+- Documentation: https://amdhayath.dpdns.org/docs
+- Pricing & Services: https://amdhayath.dpdns.org/pricing
+- GitHub: https://github.com/amohammedhayath
+- LinkedIn: https://www.linkedin.com/in/snmdhayath/
+
+## Key Statistics & Benchmarks
+- Uptime: 99.99%
+- Trusted by global enterprises and modern product teams.
