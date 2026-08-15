@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
@@ -48,16 +49,6 @@ export default function Footer() {
                         <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-400">
                             <li>
                                 <a 
-                                    href="https://medium.com/@mohammedhayath" 
-                                    target="_blank" 
-                                    rel="noopener noreferrer" 
-                                    className="hover:text-amber-500 transition-colors"
-                                >
-                                    Blog
-                                </a>
-                            </li>
-                            <li>
-                                <a 
                                     href="https://github.com/amohammedhayath" 
                                     target="_blank" 
                                     rel="noopener noreferrer" 
@@ -65,6 +56,26 @@ export default function Footer() {
                                 >
                                     Github
                                 </a>
+                            </li>
+                            <li>
+                                <a 
+                                    href="https://medium.com/@mohammedhayath" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    className="hover:text-amber-500 transition-colors"
+                                >
+                                    Medium Blog
+                                </a>
+                            </li>
+                            <li>
+                                <Link href="/docs" className="hover:text-amber-500 transition-colors">
+                                    Documentation
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/pricing" className="hover:text-amber-500 transition-colors">
+                                    Pricing & Services
+                                </Link>
                             </li>
                         </ul>
                     </div>
