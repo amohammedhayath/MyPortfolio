@@ -21,7 +21,7 @@ export const personal: PersonalInfo = {
     linkedin: "https://www.linkedin.com/in/snmdhayath/",
     twitter: "https://x.com/amohammedhayat",
     instagram: "https://www.instagram.com/snmdhayath",
-    resumeUrl: "/Mohammed_Hayath_Resume.pdf",
+    resumeUrl: "/MohammedHayath_resume.pdf",
     currentStatus:
         "With 1 year 1 month of software development experience, I am available for full-time roles.",
     hobbies:

@@ -190,7 +190,12 @@ export default function Hero() {
                                     className="rounded h-14 border-border bg-card hover:bg-secondary font-mono font-medium"
                                     asChild
                                 >
-                                    <a href="/Mohammed_Hayath_Resume.pdf" download>
+                                    <a
+                                        href="/MohammedHayath_resume.pdf"
+                                        download="MohammedHayath_Resume.pdf"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         <Download className="mr-2 w-4 h-4" />
                                         Resume
                                     </a>
