@@ -56,6 +56,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Mohammed Hayath", url: SITE_CONFIG.url }],
   creator: "Mohammed Hayath",
   metadataBase: new URL(SITE_CONFIG.url),
+  alternates: {
+    canonical: SITE_CONFIG.url,
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
@@ -89,6 +92,9 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  verification: {
+    google: "google69e35e22ab4abc47",
   },
 };
 
