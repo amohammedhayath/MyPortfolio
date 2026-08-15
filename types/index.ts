@@ -44,6 +44,23 @@ export interface Education {
     current: boolean;
 }
 
+// ── Experience ───────────────────────────────────────────────
+export interface Experience {
+    id: string;
+    role: string;
+    company: string;
+    location: string;
+    type: "Full-time" | "Part-time" | "Contract" | "Internship" | "Freelance";
+    startDate: string;
+    endDate: string;
+    current: boolean;
+    description: string;
+    responsibilities: string[];
+    skills: string[];
+    companyUrl?: string;
+    logo?: string;
+}
+
 // ── Certification ────────────────────────────────────────────
 export interface Certification {
     id: string;

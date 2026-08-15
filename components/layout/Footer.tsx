@@ -36,6 +36,7 @@ export default function Footer() {
                         <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-400">
                             <li><a href="#about" className="hover:text-amber-500 transition-colors">About</a></li>
                             <li><a href="#skills" className="hover:text-amber-500 transition-colors">Skills</a></li>
+                            <li><a href="#experience" className="hover:text-amber-500 transition-colors">Experience</a></li>
                             <li><a href="#projects" className="hover:text-amber-500 transition-colors">Projects</a></li>
                             <li><a href="#blogs" className="hover:text-amber-500 transition-colors">Blogs</a></li>
                             <li><a href="#console" className="hover:text-amber-500 transition-colors">Console</a></li>

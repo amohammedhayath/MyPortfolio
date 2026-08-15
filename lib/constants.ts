@@ -42,7 +42,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
 
 // ── Site Config ───────────────────────────────────────────────
 export const SITE_CONFIG: SiteConfig = {
-    title: "amohammedhayath",
+    title: "Mohammed Hayath",
     description:
         "Computer Science Graduate and Full Stack Developer specializing in backend architectures, distributed systems, and responsive UI interfaces.",
     url:

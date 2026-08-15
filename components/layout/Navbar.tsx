@@ -22,6 +22,7 @@ interface NavItem {
 
 const NAV_ITEMS: NavItem[] = [
     { label: "About", href: "#about", sectionId: "about" },
+    { label: "Experience", href: "#experience", sectionId: "experience" },
     { label: "Skills", href: "#skills", sectionId: "skills" },
     { label: "Projects", href: "#projects", sectionId: "projects" },
     { label: "Blogs", href: "#blogs", sectionId: "blogs" },
@@ -32,6 +33,11 @@ const NAV_ITEMS: NavItem[] = [
 const SECTION_IDS = NAV_ITEMS.map((n) => n.sectionId);
 
 function scrollToSection(href: string) {
+    if (typeof window === "undefined") return;
+    if (window.location.pathname !== "/") {
+        window.location.href = "/" + href;
+        return;
+    }
     const id = href.replace("#", "");
     const el = document.getElementById(id);
     if (el) {
@@ -72,7 +78,15 @@ export default function Navbar() {
                 <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                    onClick={() => {
+                        if (typeof window !== "undefined") {
+                            if (window.location.pathname !== "/") {
+                                window.location.href = "/";
+                            } else {
+                                window.scrollTo({ top: 0, behavior: "smooth" });
+                            }
+                        }
+                    }}
                     className="flex items-center gap-2.5 focus:outline-none"
                     aria-label="Scroll to top"
                 >
