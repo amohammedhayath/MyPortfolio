@@ -68,7 +68,7 @@ export default function Navbar() {
             )}
         >
             <nav className={cn(
-                "max-w-4xl mx-auto h-14 flex items-center justify-between px-6 rounded-full transition-all duration-300 font-mono",
+                "max-w-5xl mx-auto h-14 flex items-center justify-between px-4 sm:px-6 rounded-full transition-all duration-300 font-mono",
                 scrolled 
                     ? "bg-background/80 dark:bg-card/80 backdrop-blur-lg border border-border shadow-lg" 
                     : "bg-transparent border-transparent"
@@ -87,7 +87,7 @@ export default function Navbar() {
                             }
                         }
                     }}
-                    className="flex items-center gap-2.5 focus:outline-none"
+                    className="flex items-center gap-2.5 focus:outline-none shrink-0"
                     aria-label="Scroll to top"
                 >
                     <div className="w-8 h-8 rounded border border-amber-500/20 bg-amber-500/5 flex items-center justify-center shadow-lg shadow-amber-500/5">
@@ -99,7 +99,7 @@ export default function Navbar() {
                 </motion.button>
 
                 {/* Desktop Nav Links */}
-                <ul className="hidden md:flex items-center gap-1">
+                <ul className="hidden md:flex items-center gap-1 lg:gap-2 mx-4">
                     {NAV_ITEMS.map((item) => {
                         const isActive = activeSection === item.sectionId;
                         return (
@@ -107,7 +107,7 @@ export default function Navbar() {
                                 <button
                                     onClick={() => handleNavClick(item.href)}
                                     className={cn(
-                                        "relative px-4 py-1.5 text-xs font-medium rounded transition-all duration-300",
+                                        "relative px-2.5 lg:px-3 py-1.5 text-xs font-medium rounded transition-all duration-300",
                                         isActive
                                             ? "text-amber-500 font-semibold"
                                             : "text-muted-foreground hover:text-foreground"
@@ -134,8 +134,10 @@ export default function Navbar() {
                     <motion.a
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        href="./MohammedHayath_Resume.pdf"
-                        download
+                        href="/MohammedHayath_resume.pdf"
+                        download="MohammedHayath_Resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="hidden sm:flex items-center gap-1 px-4 py-1.5 rounded border border-amber-500 bg-amber-500 hover:bg-amber-600 text-black text-xs font-bold transition-all duration-200"
                     >
                         Resume
@@ -167,7 +169,12 @@ export default function Navbar() {
                                     </button>
                                 ))}
                                 <Button className="w-full mt-4 bg-amber-500 text-black hover:bg-amber-600 font-bold font-mono" asChild>
-                                    <a href="./MohammedHayath_Resume.pdf" download>
+                                    <a
+                                        href="/MohammedHayath_resume.pdf"
+                                        download="MohammedHayath_Resume.pdf"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         Download Resume
                                     </a>
                                 </Button>
